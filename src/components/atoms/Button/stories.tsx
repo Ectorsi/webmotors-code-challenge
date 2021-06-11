@@ -17,18 +17,18 @@ export const FullButton: Story = () => (
 );
 
 export const Underlined: Story = () => (
-  <div style={{ maxWidth: '255px', margin: '0 auto' }}>
-    <Button underlined>vender meu carro</Button>
+  <div style={{ maxWidth: '240px', margin: '0 auto' }}>
+    <Button underlined>Vender meu carro</Button>
   </div>
 );
 
 export const SimpleButton: Story = () => (
-  <div style={{ maxWidth: '255px', margin: '0 auto' }}>
-    <Button simpleButton>ver ofertas</Button>
+  <div style={{ maxWidth: '150px', margin: '0 auto' }}>
+    <Button simpleButton> {`>`} Busca avançada</Button>
   </div>
 );
 export const RawButton: Story = () => (
-  <div style={{ maxWidth: '255px', margin: '0 auto' }}>
-    <Button rawButton>ver ofertas</Button>
+  <div style={{ maxWidth: '100px', margin: '0 auto' }}>
+    <Button rawButton>Limpar filtros</Button>
   </div>
 );
