@@ -1,14 +1,15 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { render } from '@testing-library/react';
-import Label from '.';
+import Logo from '.';
 
-describe('Label component', () => {
-  it('should be able to render a Label as default', () => {
-    const { getByTestId } = render(<Label text="teste1" />);
+describe('Logo component', () => {
+  it('should be able to render a Logo as default', () => {
+    const { getByTestId } = render(<Logo logoPath="logo-teste" />);
 
-    const TitleElement = getByTestId('Label');
+    const LogoElement = getByTestId('Logo');
 
-    expect(TitleElement).toHaveTextContent('teste1');
+    expect(LogoElement).toHaveStyle('height: 28px;');
+    expect(LogoElement).toHaveStyle('width: 145px;');
   });
 });
