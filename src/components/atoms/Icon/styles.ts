@@ -15,12 +15,15 @@ export const Container = styled.div<StyleProps>`
     !!pathIcon &&
     css`
       background-image: url(${pathIcon});
+      filter: invert(37%) sepia(93%) saturate(0%) hue-rotate(3deg)
+        brightness(99%) contrast(1%);
     `};
 
   ${({ isBig }) =>
     isBig &&
     css`
-      height: 40px;
+      background-size: cover;
+      height: 30px;
       width: 40px;
     `};
 

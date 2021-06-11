@@ -7,7 +7,9 @@ const mockedHandleChange = jest.fn();
 
 describe('Checkbox component', () => {
   it('should be able to render a Checkbox and test de function onChange', () => {
-    const { getByTestId } = render(<Checkbox onChange={mockedHandleChange} />);
+    const { getByTestId } = render(
+      <Checkbox onChange={mockedHandleChange} label="" name="" />,
+    );
 
     const CheckboxElement = getByTestId('Checkbox');
 

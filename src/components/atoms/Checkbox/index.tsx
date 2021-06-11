@@ -1,16 +1,21 @@
 import React from 'react';
-import { Container } from './styles';
+import { Container, Label, Input, Mark } from './styles';
 
-type CheckboxProps = {
+type Props = {
+  name: string;
+  label: string;
   onChange(): void;
 };
 
-const Checkbox: React.FC<CheckboxProps> = ({ onChange }) => {
+const CheckBox: React.FC<Props> = ({ name, label, onChange }) => {
   return (
-    <Container data-testid="Checkbox" onChange={onChange}>
-      <input type="checkbox" />
+    <Container data-testid="Checkbox">
+      <Label htmlFor={label}>
+        <Input name={name} type="checkbox" id={label} />
+        <Mark />
+        {label}
+      </Label>
     </Container>
   );
 };
-
-export default Checkbox;
+export default CheckBox;

@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <Container
-      type={'button'}
+      type="button"
       fullButton={fullButton}
       underlined={underlined}
       simpleButton={simpleButton}

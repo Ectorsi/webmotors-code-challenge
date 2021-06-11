@@ -12,7 +12,8 @@ export default {
 
 export const Default: Story = () => {
   const handleChange = useCallback(() => {
-    console.log('Função onChange');
+    console.log('Teste');
   }, []);
-  return <Checkbox onChange={handleChange} />;
+
+  return <Checkbox label="test" name="nam-test" onChange={handleChange} />;
 };

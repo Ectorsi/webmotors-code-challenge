@@ -18,7 +18,7 @@ describe('Icon component', () => {
 
     const IconElement = getByTestId('icon');
 
-    expect(IconElement).toHaveStyle(`height: 40px;`);
+    expect(IconElement).toHaveStyle(`height: 30px;`);
     expect(IconElement).toHaveStyle(`width: 40px;`);
   });
 
