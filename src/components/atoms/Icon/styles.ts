@@ -10,7 +10,6 @@ type StyleProps = {
 export const Container = styled.div<StyleProps>`
   height: 25px;
   width: 25px;
-  /* background: #900; */
 
   ${({ pathIcon }) =>
     !!pathIcon &&
