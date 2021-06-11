@@ -7,7 +7,9 @@
     "start": "webpack-dev-server",
     "build": "webpack --mode production",
     "test": "jest --no-cache --watchAll=true",
-    "test:coverage": "npm run test --silent -- --watchAll=false --coverage || ECHO"
+    "test:coverage": "npm run test --silent -- --watchAll=false --coverage || ECHO",
+    "storybook": "start-storybook -s ./build -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +38,11 @@
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
     "@babel/runtime": "^7.11.2",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "@storybook/preset-typescript": "^3.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.2",
     "@testing-library/react-hooks": "^3.4.1",
