@@ -1,15 +1,56 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Button from '.';
 
+const handleClick = jest.fn();
+
 describe('Button component', () => {
-  it('should be able to render a Button as default', () => {
-    const { getByTestId } = render(<Button />);
+  it('should be able to render a Button as prop FullButton', () => {
+    render(
+      <Button fullButton onClick={handleClick}>
+        Full-button
+      </Button>,
+    );
 
-    const ButtonElement = getByTestId('Button');
+    fireEvent.click(screen.getByText(/Full-button/i));
 
-    expect(ButtonElement).toHaveStyle(`height: 25px;`);
-    expect(ButtonElement).toHaveStyle(`width: 25px;`);
+    expect(handleClick).toHaveBeenCalled();
+  });
+
+  it('should be able to render a Button as prop Underlined', () => {
+    render(
+      <Button underlined onClick={handleClick}>
+        Underlined-button
+      </Button>,
+    );
+
+    fireEvent.click(screen.getByText(/Underlined-button/i));
+
+    expect(handleClick).toHaveBeenCalled();
+  });
+
+  it('should be able to render a Button as prop SimpleButton', () => {
+    render(
+      <Button simpleButton onClick={handleClick}>
+        simple-Button
+      </Button>,
+    );
+
+    fireEvent.click(screen.getByText(/simple-Button/i));
+
+    expect(handleClick).toHaveBeenCalled();
+  });
+
+  it('should be able to render a Button as prop RawButton', () => {
+    render(
+      <Button rawButton onClick={handleClick}>
+        raw-Button
+      </Button>,
+    );
+
+    fireEvent.click(screen.getByText(/raw-Button/i));
+
+    expect(handleClick).toHaveBeenCalled();
   });
 });
