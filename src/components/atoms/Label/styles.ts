@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components';
 
 type StyleProps = {
   fontSize?: string;
-  isTextUppercase?: boolean;
-  hasPadding?: boolean;
+  isLabelTextUppercase?: boolean;
+  hasLabelPadding?: boolean;
 };
 
 export const Container = styled.div<StyleProps>`
@@ -16,14 +16,14 @@ export const Container = styled.div<StyleProps>`
       font-size: ${`${fontSize}px`};
     `};
 
-  ${({ isTextUppercase }) =>
-    isTextUppercase &&
+  ${({ isLabelTextUppercase }) =>
+    isLabelTextUppercase &&
     css`
       text-transform: uppercase;
     `};
 
-  ${({ hasPadding }) =>
-    hasPadding &&
+  ${({ hasLabelPadding }) =>
+    hasLabelPadding &&
     css`
       padding: 0 10px;
     `};

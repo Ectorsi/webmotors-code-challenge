@@ -4,12 +4,23 @@ import { Container } from './styles';
 type LabelProps = {
   text: string;
   fontSize?: string;
-  hasPadding?: boolean;
+  isLabelTextUppercase?: boolean;
+  hasLabelPadding?: boolean;
 };
 
-const Label: React.FC<LabelProps> = ({ text, fontSize, hasPadding }) => {
+const Label: React.FC<LabelProps> = ({
+  text,
+  fontSize,
+  hasLabelPadding,
+  isLabelTextUppercase,
+}) => {
   return (
-    <Container data-testid="Label" hasPadding={hasPadding} fontSize={fontSize}>
+    <Container
+      data-testid="Label"
+      hasLabelPadding={hasLabelPadding}
+      fontSize={fontSize}
+      isLabelTextUppercase={isLabelTextUppercase}
+    >
       {text}
     </Container>
   );

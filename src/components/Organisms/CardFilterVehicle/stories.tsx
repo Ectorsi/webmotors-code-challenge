@@ -1,15 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import CardHeader from '.';
+import ImgIcon from '../../../assets/icons/car.svg';
+import CardFilterVehicle from '.';
 export default {
-  title: 'Molecules/CardHeader',
-  component: CardHeader,
+  title: 'Organisms/CardFilterVehicle',
+  component: CardFilterVehicle,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 } as Meta;
 
 export const Default: Story = () => {
-  return <CardHeader />;
+  return <CardFilterVehicle />;
 };

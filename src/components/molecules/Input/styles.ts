@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
-
+import { Container as IconContainer } from '../../atoms/Icon/styles';
 type StyleProps = {
   noRightBorderRadius?: boolean;
+  icon?: string;
 };
 
 export const Container = styled.div<StyleProps>`
@@ -21,6 +22,15 @@ export const Container = styled.div<StyleProps>`
     css`
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
+    `};
+
+  ${({ icon }) =>
+    !!!icon &&
+    css`
+      ${IconContainer} {
+        filter: invert(37%) sepia(93%) saturate(7471%) hue-rotate(50deg)
+          brightness(91%) contrast(135%);
+      }
     `};
 
   input {

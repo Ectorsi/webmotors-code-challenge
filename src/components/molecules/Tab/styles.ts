@@ -17,7 +17,7 @@ export const Container = styled.button<StyleProps>`
   border: 0;
   background: none;
 
-  padding-bottom: 7px;
+  padding-bottom: 10px;
 
   ${({ isSelected }) =>
     isSelected &&
@@ -36,6 +36,8 @@ export const Container = styled.button<StyleProps>`
 `;
 
 export const WrappTabTexts = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-left: 15px;
 `;

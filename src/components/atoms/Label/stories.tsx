@@ -10,4 +10,10 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = () => <Label text="comprar" />;
+export const Default: Story = () => <Label text="Comprar" />;
+export const Uppercase: Story = () => (
+  <Label text="Caixa alta" isLabelTextUppercase />
+);
+export const Padding: Story = () => (
+  <Label text="Utilizando padding" isLabelTextUppercase hasLabelPadding />
+);

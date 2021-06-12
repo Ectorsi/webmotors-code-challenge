@@ -9,14 +9,21 @@ type TabProps = {
   label: string;
   pathIcon: string;
   tabTitle: string;
+  onClick(): void;
 };
 
-const Tab: React.FC<TabProps> = ({ pathIcon, isSelected, label, tabTitle }) => {
+const Tab: React.FC<TabProps> = ({
+  pathIcon,
+  isSelected,
+  label,
+  tabTitle,
+  onClick,
+}) => {
   return (
-    <S.Container data-testid="Tab" isSelected={isSelected}>
+    <S.Container data-testid="Tab" isSelected={isSelected} onClick={onClick}>
       <Icon pathIcon={pathIcon} isBig />
       <S.WrappTabTexts>
-        <Label text={label} />
+        <Label isLabelTextUppercase text={label} />
         <TabTitle text={tabTitle} />
       </S.WrappTabTexts>
     </S.Container>

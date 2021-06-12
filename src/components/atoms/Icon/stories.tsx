@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import Icon from '.';
-import CarIcon from '../../../assets/icons/car.svg';
+import CarIcon from '../../../assets/icons/moto.svg';
 export default {
   title: 'Atoms/Icon',
   component: Icon,

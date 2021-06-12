@@ -8,7 +8,7 @@ type StyleProps = {
 };
 
 export const Container = styled.div<StyleProps>`
-  height: 25px;
+  height: 22px;
   width: 25px;
   background-size: cover;
   ${({ pathIcon }) =>
@@ -23,21 +23,21 @@ export const Container = styled.div<StyleProps>`
     isBig &&
     css`
       background-size: cover;
-      height: 30px;
-      width: 40px;
+      height: 25px;
+      width: 30px;
     `};
 
   ${({ isMedium }) =>
     isMedium &&
     css`
-      height: 35px;
-      width: 35px;
+      height: 25px;
+      width: 25px;
     `};
 
   ${({ isSmall }) =>
     isSmall &&
     css`
-      height: 25px;
-      width: 25px;
+      height: 15px;
+      width: 15px;
     `};
 `;

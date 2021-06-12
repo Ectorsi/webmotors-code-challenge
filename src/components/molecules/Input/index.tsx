@@ -1,8 +1,6 @@
 import React, { InputHTMLAttributes, useEffect, useRef } from 'react';
-import { IconBaseProps } from 'react-icons';
 import Icon from '../../atoms/Icon';
 import { useField } from '@unform/core';
-
 import { Container } from './styles';
 import Label from '../../atoms/Label';
 
@@ -39,8 +37,8 @@ const Input: React.FC<InputProps> = ({
       data-testid="input-container"
       noRightBorderRadius={noRightBorderRadius}
     >
-      {icon && <Icon pathIcon={icon} isSmall />}
-      {label && <Label fontSize="16" hasPadding text={label} />}
+      {icon && <Icon pathIcon={icon} isMedium />}
+      {label && <Label fontSize="16" hasLabelPadding text={label} />}
       <input defaultValue={defaultValue} ref={inputRef} {...rest} />
       {rightIcon && <Icon pathIcon={rightIcon} isSmall />}
     </Container>
