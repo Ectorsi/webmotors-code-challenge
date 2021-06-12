@@ -17,8 +17,8 @@ const Select: React.FC<SelectProps> = ({
   ...rest
 }) => {
   return (
-    <S.Container noBorderLeftRadius={noBorderLeftRadius}>
-      {label && <Label hasPadding fontSize="13" text={label} />}
+    <S.Container noBorderLeftRadius={noBorderLeftRadius} data-testid="Select">
+      {label && <Label hasLabelPadding fontSize="13" text={label} />}
       <S.Select {...rest} isTextBold={isTextBold}>
         {data &&
           data.map((item) => <S.SelectItem key={item}> {item} </S.SelectItem>)}

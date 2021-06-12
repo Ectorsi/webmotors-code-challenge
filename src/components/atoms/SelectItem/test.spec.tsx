@@ -1,28 +1,16 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import Tab from '.';
+import SelectItem from '.';
 
-describe('Tab component', () => {
-  it('should be able to render a Tab as default', () => {
-    const { getByTestId } = render(<Tab label="" pathIcon="" tabTitle="" />);
+describe('SelectItem component', () => {
+  it('should be able to render a SelectItem as default', () => {
+    const { getByTestId } = render(<SelectItem />);
 
-    const TabElement = getByTestId('Tab');
+    const SelectItemElement = getByTestId('SelectItem');
 
-    fireEvent.click(TabElement);
+    fireEvent.click(SelectItemElement);
 
-    expect(TabElement).not.toHaveStyle('border-bottom: 2px solid #83474a;');
-  });
-
-  it('should be able to render a Tab as default', () => {
-    const { getByTestId } = render(
-      <Tab label="" pathIcon="" tabTitle="" isSelected />,
-    );
-
-    const TabElement = getByTestId('Tab');
-
-    fireEvent.click(TabElement);
-
-    expect(TabElement).toHaveStyle('border-bottom: 2px solid #83474a;');
+    expect(SelectItemElement).toHaveDisplayValue([]);
   });
 });

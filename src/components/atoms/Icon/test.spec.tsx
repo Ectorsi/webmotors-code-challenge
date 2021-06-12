@@ -9,7 +9,7 @@ describe('Icon component', () => {
 
     const IconElement = getByTestId('icon');
 
-    expect(IconElement).toHaveStyle(`height: 25px;`);
+    expect(IconElement).toHaveStyle(`height: 22px;`);
     expect(IconElement).toHaveStyle(`width: 25px;`);
   });
 
@@ -18,8 +18,8 @@ describe('Icon component', () => {
 
     const IconElement = getByTestId('icon');
 
-    expect(IconElement).toHaveStyle(`height: 30px;`);
-    expect(IconElement).toHaveStyle(`width: 40px;`);
+    expect(IconElement).toHaveStyle(`height: 25px;`);
+    expect(IconElement).toHaveStyle(`width: 30px;`);
   });
 
   it('should be able to render a Icon', () => {
@@ -27,8 +27,8 @@ describe('Icon component', () => {
 
     const IconElement = getByTestId('icon');
 
-    expect(IconElement).toHaveStyle(`height: 35px;`);
-    expect(IconElement).toHaveStyle(`width: 35px;`);
+    expect(IconElement).toHaveStyle(`height: 25px;`);
+    expect(IconElement).toHaveStyle(`width: 25px;`);
   });
 
   it('should be able to render a Icon', () => {
@@ -36,7 +36,7 @@ describe('Icon component', () => {
 
     const IconElement = getByTestId('icon');
 
-    expect(IconElement).toHaveStyle(`height: 25px;`);
-    expect(IconElement).toHaveStyle(`width: 25px;`);
+    expect(IconElement).toHaveStyle(`height: 15px;`);
+    expect(IconElement).toHaveStyle(`width: 15px;`);
   });
 });

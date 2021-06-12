@@ -1,28 +1,18 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import Tab from '.';
+import Select from '.';
 
-describe('Tab component', () => {
-  it('should be able to render a Tab as default', () => {
-    const { getByTestId } = render(<Tab label="" pathIcon="" tabTitle="" />);
+const mockedData = ['teste'];
 
-    const TabElement = getByTestId('Tab');
+describe('Select component', () => {
+  it('should be able to render a Select as default', () => {
+    const { getByTestId } = render(<Select label="" data={mockedData} />);
 
-    fireEvent.click(TabElement);
+    const SelectElement = getByTestId('Select');
 
-    expect(TabElement).not.toHaveStyle('border-bottom: 2px solid #83474a;');
-  });
+    fireEvent.click(SelectElement);
 
-  it('should be able to render a Tab as default', () => {
-    const { getByTestId } = render(
-      <Tab label="" pathIcon="" tabTitle="" isSelected />,
-    );
-
-    const TabElement = getByTestId('Tab');
-
-    fireEvent.click(TabElement);
-
-    expect(TabElement).toHaveStyle('border-bottom: 2px solid #83474a;');
+    expect(SelectElement).toHaveTextContent('teste');
   });
 });

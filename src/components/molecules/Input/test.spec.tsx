@@ -1,28 +1,30 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import Tab from '.';
+import Input from '.';
 
-describe('Tab component', () => {
-  it('should be able to render a Tab as default', () => {
-    const { getByTestId } = render(<Tab label="" pathIcon="" tabTitle="" />);
+// Teste por fazer
 
-    const TabElement = getByTestId('Tab');
+describe('Input component', () => {
+  it('should be able to render a Input as default', () => {
+    const { getByTestId } = render(<Input name="" icon="" placeholder="" />);
 
-    fireEvent.click(TabElement);
+    const InputElement = getByTestId('Input');
 
-    expect(TabElement).not.toHaveStyle('border-bottom: 2px solid #83474a;');
+    fireEvent.click(InputElement);
+
+    expect(InputElement).not.toHaveStyle('border-bottom: 2px solid #83474a;');
   });
 
-  it('should be able to render a Tab as default', () => {
+  it('should be able to render a Input with prop noRightBorderRadius', () => {
     const { getByTestId } = render(
-      <Tab label="" pathIcon="" tabTitle="" isSelected />,
+      <Input name="" icon="" placeholder="" noRightBorderRadius />,
     );
 
-    const TabElement = getByTestId('Tab');
+    const InputElement = getByTestId('Input');
 
-    fireEvent.click(TabElement);
+    fireEvent.click(InputElement);
 
-    expect(TabElement).toHaveStyle('border-bottom: 2px solid #83474a;');
+    expect(InputElement).not.toHaveStyle('border-bottom: 2px solid #83474a;');
   });
 });
