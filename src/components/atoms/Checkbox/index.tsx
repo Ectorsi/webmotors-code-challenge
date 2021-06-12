@@ -4,10 +4,10 @@ import { Container, Label, Input, Mark } from './styles';
 type Props = {
   name: string;
   label: string;
-  onChange(): void;
+  // onChange(): void;
 };
 
-const CheckBox: React.FC<Props> = ({ name, label, onChange }) => {
+const CheckBox: React.FC<Props> = ({ name, label }) => {
   return (
     <Container>
       <Label htmlFor={label}>

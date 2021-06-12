@@ -2,8 +2,13 @@ import React from 'react';
 import Label from '../../atoms/Label';
 import * as S from './styles';
 
+type SelectItem = {
+  ID: number;
+  Name: string;
+};
+
 type SelectProps = {
-  data: string[];
+  data: SelectItem[];
   noBorderLeftRadius?: boolean;
   label?: string;
   isTextBold?: boolean;
@@ -21,7 +26,9 @@ const Select: React.FC<SelectProps> = ({
       {label && <Label hasLabelPadding fontSize="13" text={label} />}
       <S.Select {...rest} isTextBold={isTextBold}>
         {data &&
-          data.map((item) => <S.SelectItem key={item}> {item} </S.SelectItem>)}
+          data.map((item) => (
+            <S.SelectItem key={item.ID}> {item.Name} </S.SelectItem>
+          ))}
       </S.Select>
     </S.Container>
   );

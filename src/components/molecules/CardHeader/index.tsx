@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
 import { useCallback } from 'react';
 
 import { useState } from 'react';
+// @ts-ignore
 import CarIcon from '../../../assets/icons/car.svg';
+// @ts-ignore
 import MotoIcon from '../../../assets/icons/moto.svg';
 import Button from '../../atoms/Button';
 import Tab from '../Tab';

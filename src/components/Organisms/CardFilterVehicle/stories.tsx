@@ -12,5 +12,20 @@ export default {
 } as Meta;
 
 export const Default: Story = () => {
-  return <CardFilterVehicle />;
+  const MarkingData = [
+    {
+      ID: 1,
+      Name: 'Chevrolet',
+    },
+    {
+      ID: 2,
+      Name: 'Honda',
+    },
+    {
+      ID: 3,
+      Name: 'Ford',
+    },
+  ];
+
+  return <CardFilterVehicle makes={MarkingData} />;
 };

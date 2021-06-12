@@ -1,86 +1,159 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useRef } from 'react';
 import CardBody from '../../atoms/CardBody';
 import CardHeader from '../../molecules/CardHeader';
+// @ts-ignore
 import PinIcon from '../../../assets/icons/pin.svg';
+// @ts-ignore
 import closeIcon from '../../../assets/icons/close.svg';
 import * as S from './styles';
 import CheckBox from '../../atoms/Checkbox';
-import { useCallback } from 'react';
-import { Col10, Col5, Container } from '../../../styles/GridSystem';
+import {
+  Col10,
+  Col3,
+  Col4,
+  Col5,
+  Col6,
+  Col7,
+  Row,
+} from '../../../styles/GridSystem';
 import Input from '../../molecules/Input';
 import { Form } from '@unform/web';
 import Select from '../../molecules/Select';
 import Button from '../../atoms/Button';
 
-const CardFilterVehicle: React.FC = () => {
-  const formRef = useRef(null);
-  const handleChange = useCallback(() => {
-    console.log('Mudou');
-  }, []);
+/**
+ * [
+  {
+    "ID": 1,
+    "Name": "Chevrolet"
+  },
+  {
+    "ID": 2,
+    "Name": "Honda"
+  },
+  {
+    "ID": 3,
+    "Name": "Ford"
+  }
+]
+ */
 
-  const handleFormSubmit = (data) => {
+type Make = {
+  ID: number;
+  Name: string;
+};
+
+type CardFilterVehicleProps = {
+  makes: Make[];
+};
+
+const CardFilterVehicle: React.FC<CardFilterVehicleProps> = ({ makes }) => {
+  const formRef = useRef(null);
+  // const handleChange = useCallback(() => {
+  //   console.log('Mudou');
+  // }, []);
+
+  const handleFormSubmit = (data: any) => {
     console.log(data);
   };
 
-  const raioData = ['100', '200', '300', '400', '500'];
-  const MarkingData = ['Todas'];
-  const ModelData = ['Todos'];
-  const WishYearDate = ['Ano Desejado'];
-  const PriceRangeData = ['Faixa de Preço'];
-  const VersionData = ['Todas'];
+  // const raioData = ['100', '200', '300', '400', '500'];
+  // const ModelData = ['Todos'];
+  // const WishYearDate = ['Ano Desejado'];
+  // const PriceRangeData = ['Faixa de Preço'];
+  // const VersionData = ['Todas'];
 
   return (
     <S.Container>
-      <CardHeader />
+      <Col10>
+        <CardHeader />
+      </Col10>
       <CardBody>
         <Form ref={formRef} onSubmit={handleFormSubmit}>
-          <S.Conditions>
-            <CheckBox label="Novo" name="Novo" onChange={handleChange} />
-            <CheckBox label="Usado" name="Usado" onChange={handleChange} />
-          </S.Conditions>
           <Col10>
-            <Container>
-              <Input
-                name="Onde"
-                noRightBorderRadius
-                label="Onde:"
-                icon={PinIcon}
-                rightIcon={closeIcon}
-                placeholder=""
-              />
-              <Select
-                data={raioData}
-                noBorderLeftRadius
-                label="Raio:"
-                isTextBold
-              />
-              <Select data={MarkingData} label="Marca:" isTextBold />
-              <Select label="Modelo:" data={ModelData} />
-            </Container>
+            <S.Conditions>
+              <CheckBox label="Novo" name="Novo" />
+              <CheckBox label="Usado" name="Usado" />
+            </S.Conditions>
+          </Col10>
+          <Col10>
+            <Row>
+              <Col5>
+                <Row>
+                  <Col7>
+                    <Input
+                      name="Onde"
+                      noRightBorderRadius
+                      label="Onde:"
+                      icon={PinIcon}
+                      rightIcon={closeIcon}
+                      placeholder=""
+                    />
+                  </Col7>
+                  <Col3 fullFilling>
+                    {/* <Select
+                    // @ts-ignore 
+                      data={raioData}
+                      noBorderLeftRadius
+                      label="Raio:"
+                      isTextBold
+                    /> */}
+                  </Col3>
+                </Row>
+              </Col5>
+              <Col5>
+                <Row>
+                  <Col5>
+                    <Select data={makes} label="Marca:" isTextBold />
+                  </Col5>
+                  <Col5>
+                    {/* <Select label="Modelo:" 
+                   
+                    data={ModelData} /> */}
+                  </Col5>
+                </Row>
+              </Col5>
+            </Row>
+            <Row>
+              <Col5>
+                <Row>
+                  <Col5>
+                    {/* <Select 
+                     // @ts-ignore 
+                    data={WishYearDate} /> */}
+                  </Col5>
+                  <Col5>
+                    {/* <Select 
+                     // @ts-ignore 
+                    data={PriceRangeData} /> */}
+                  </Col5>
+                </Row>
+              </Col5>
+              <Col5>
+                {/* <Select label="Versão:" 
+                 // @ts-ignore 
+                data={VersionData} /> */}
+              </Col5>
+            </Row>
 
-            <Container>
+            <Row>
               <Col5>
-                <Container>
-                  <Select data={WishYearDate} />
-                  <Select data={PriceRangeData} />
-                </Container>
+                <Button simpleButton>{`>`} Busca avançada</Button>
               </Col5>
               <Col5>
-                <Select label="Versão:" data={VersionData} />
+                <Row>
+                  <Col4>
+                    <Button rawButton>Limpar filtros</Button>
+                  </Col4>
+                  <Col6>
+                    <Button fullButton> Ver Ofertas</Button>
+                  </Col6>
+                </Row>
               </Col5>
-            </Container>
-
-            <Container>
-              <Col5>
-                <Container>
-                  <Button simpleButton>{`>`} Busca avançada</Button>
-                </Container>
-              </Col5>
-              <Col5>
-                <Button rawButton>Limpar filtros</Button>
-                <Button fullButton> Ver Ofertas</Button>
-              </Col5>
-            </Container>
+            </Row>
           </Col10>
         </Form>
       </CardBody>

@@ -37,6 +37,7 @@ const Input: React.FC<InputProps> = ({
       data-testid="input-container"
       noRightBorderRadius={noRightBorderRadius}
     >
+      {console.log(error)}
       {icon && <Icon pathIcon={icon} isMedium />}
       {label && <Label fontSize="16" hasLabelPadding text={label} />}
       <input defaultValue={defaultValue} ref={inputRef} {...rest} />
