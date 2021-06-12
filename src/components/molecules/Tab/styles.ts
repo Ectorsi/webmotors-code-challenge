@@ -6,13 +6,16 @@ type StyleProps = {
   isSelected?: boolean;
 };
 
-export const Container = styled.div<StyleProps>`
+export const Container = styled.button<StyleProps>`
   display: flex;
   width: 150px;
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0;
+  background: none;
 
   padding-bottom: 7px;
 

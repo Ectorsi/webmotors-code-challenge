@@ -9,9 +9,9 @@ type Props = {
 
 const CheckBox: React.FC<Props> = ({ name, label, onChange }) => {
   return (
-    <Container data-testid="Checkbox">
+    <Container>
       <Label htmlFor={label}>
-        <Input name={name} type="checkbox" id={label} />
+        <Input name={name} type="checkbox" id={label} data-testid="Checkbox" />
         <Mark />
         {label}
       </Label>
