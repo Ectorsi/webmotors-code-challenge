@@ -3,49 +3,77 @@ import React from 'react';
 import { useCallback } from 'react';
 
 import { useState } from 'react';
-// @ts-ignore
-import CarIcon from '../../../assets/icons/car.svg';
-// @ts-ignore
-import MotoIcon from '../../../assets/icons/moto.svg';
 import Button from '../../atoms/Button';
 import Tab from '../Tab';
 import * as S from './styles';
+
+import { Row } from '../../../styles/GridSystem';
+import Logo from '../../atoms/Logo';
 
 enum TabType {
   TAB_1 = 'TAB_1',
   TAB_2 = 'TAB_2',
 }
 
-const CardHeader: React.FC = () => {
+type CardHeaderProps = {
+  selectTab(tabName: TabType): void;
+};
+
+const CardHeader: React.FC<CardHeaderProps> = ({ selectTab }) => {
   const [isTabActive, setIsTabActive] = useState<TabType>(TabType.TAB_1);
 
-  const switchTab = useCallback((tabName) => {
-    setIsTabActive(tabName);
-  }, []);
+  const isDesktop = window.matchMedia('(min-width:1199px)').matches;
+
+  const switchTab = useCallback(
+    (tabName) => {
+      setIsTabActive(tabName);
+      selectTab(tabName);
+    },
+    [selectTab],
+  );
 
   return (
-    <S.Container>
-      <S.WrappTabs>
-        <Tab
-          label="Comprar"
-          pathIcon={CarIcon}
-          onClick={() => switchTab(TabType.TAB_1)}
-          tabTitle="Carro"
-          isSelected={isTabActive === TabType.TAB_1}
-        />
+    <S.CardHeaderWrapper>
+      <Row>
+        <S.LogoWrapper>
+          <Logo />
 
-        <Tab
-          label="Comprar"
-          pathIcon={MotoIcon}
-          onClick={() => switchTab(TabType.TAB_2)}
-          tabTitle="Moto"
-          isSelected={isTabActive === TabType.TAB_2}
-        />
-      </S.WrappTabs>
-      <S.ButtonWrapper>
-        <Button underlined>Vender meu carro</Button>
-      </S.ButtonWrapper>
-    </S.Container>
+          {!isDesktop && (
+            <S.ButtonWrapper>
+              <Button style={{ height: '35px' }} underlined>
+                Vender meu carro
+              </Button>
+            </S.ButtonWrapper>
+          )}
+        </S.LogoWrapper>
+      </Row>
+      <Row>
+        <S.WrappTabs>
+          <Tab
+            label="Comprar"
+            pathIcon="https://svgsilh.com/svg/1918554.svg"
+            onClick={() => switchTab(TabType.TAB_1)}
+            tabTitle="Carros"
+            isSelected={isTabActive === TabType.TAB_1}
+          />
+
+          <Tab
+            label="Comprar"
+            pathIcon="https://svgsilh.com/svg/2707960.svg"
+            onClick={() => switchTab(TabType.TAB_2)}
+            tabTitle="Motos"
+            isSelected={isTabActive === TabType.TAB_2}
+          />
+        </S.WrappTabs>
+        {isDesktop && (
+          <S.ButtonWrapper>
+            <Button style={{ height: '35px' }} underlined>
+              Vender meu carro
+            </Button>
+          </S.ButtonWrapper>
+        )}
+      </Row>
+    </S.CardHeaderWrapper>
   );
 };
 

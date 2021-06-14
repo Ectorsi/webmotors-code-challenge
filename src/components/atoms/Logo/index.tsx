@@ -1,12 +1,14 @@
 import React from 'react';
-import { Container } from './styles';
+import { Img } from './styles';
 
-type LogoProps = {
-  logoPath: string;
-};
-
-const Logo: React.FC<LogoProps> = ({ logoPath }) => {
-  return <Container data-testid="Logo" logoPath={logoPath} />;
+const Logo: React.FC = () => {
+  return (
+    <Img
+      data-testid="Logo"
+      src="https://www.webmotors.com.br/assets/img/webmotors.svg?t=1895"
+      alt="logo"
+    />
+  );
 };
 
 export default Logo;

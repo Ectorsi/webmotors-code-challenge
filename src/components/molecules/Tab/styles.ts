@@ -19,6 +19,10 @@ export const Container = styled.button<StyleProps>`
 
   padding-bottom: 10px;
 
+  ${IconContainer} {
+    background-position: bottom;
+  }
+
   ${({ isSelected }) =>
     isSelected &&
     css`

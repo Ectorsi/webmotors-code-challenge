@@ -10,7 +10,9 @@ type StyleProps = {
 export const Container = styled.div<StyleProps>`
   height: 22px;
   width: 25px;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+
   ${({ pathIcon }) =>
     !!pathIcon &&
     css`
@@ -22,7 +24,6 @@ export const Container = styled.div<StyleProps>`
   ${({ isBig }) =>
     isBig &&
     css`
-      background-size: cover;
       height: 25px;
       width: 30px;
     `};
@@ -30,14 +31,14 @@ export const Container = styled.div<StyleProps>`
   ${({ isMedium }) =>
     isMedium &&
     css`
-      height: 25px;
-      width: 25px;
+      height: 15px;
+      width: 15px;
     `};
 
   ${({ isSmall }) =>
     isSmall &&
     css`
-      height: 15px;
-      width: 15px;
+      height: 10px;
+      width: 10px;
     `};
 `;

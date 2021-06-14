@@ -4,13 +4,15 @@ import styled from 'styled-components';
 
 interface GridProps {
   hasPadding?: boolean;
+  hasPaddingBottom?: boolean;
   fullFilling?: boolean;
 }
 
-export const Row = styled.div`
+export const Row = styled.div<GridProps>`
   width: 100%;
 
   @media (min-width: 1199px) {
+    padding-bottom: ${({ hasPaddingBottom }) => hasPaddingBottom && '10px'};
     display: flex;
     justify-content: space-between;
   }

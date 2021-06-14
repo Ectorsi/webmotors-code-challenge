@@ -27,8 +27,8 @@ describe('Icon component', () => {
 
     const IconElement = getByTestId('icon');
 
-    expect(IconElement).toHaveStyle(`height: 25px;`);
-    expect(IconElement).toHaveStyle(`width: 25px;`);
+    expect(IconElement).toHaveStyle(`height: 15px;`);
+    expect(IconElement).toHaveStyle(`width: 15px;`);
   });
 
   it('should be able to render a Icon', () => {
@@ -36,7 +36,7 @@ describe('Icon component', () => {
 
     const IconElement = getByTestId('icon');
 
-    expect(IconElement).toHaveStyle(`height: 15px;`);
-    expect(IconElement).toHaveStyle(`width: 15px;`);
+    expect(IconElement).toHaveStyle(`height: 10px;`);
+    expect(IconElement).toHaveStyle(`width: 10px;`);
   });
 });

@@ -1,16 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-type styleProps = {
-  logoPath: string;
-};
-
-export const Container = styled.div<styleProps>`
+export const Img = styled.img`
   height: 28px;
   width: 145px;
-
-  ${({ logoPath }) =>
-    !!logoPath &&
-    css`
-      background-image: url(${logoPath});
-    `};
 `;

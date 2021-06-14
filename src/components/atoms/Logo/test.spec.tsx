@@ -5,7 +5,15 @@ import Logo from '.';
 
 describe('Logo component', () => {
   it('should be able to render a Logo as default', () => {
-    const { getByTestId } = render(<Logo logoPath="logo-teste" />);
+    const { getByTestId } = render(<Logo />);
+
+    const LogoElement = getByTestId('Logo');
+
+    expect(LogoElement).toBeInTheDocument();
+  });
+
+  it('should be able to render a Logo as default with dimensions', () => {
+    const { getByTestId } = render(<Logo />);
 
     const LogoElement = getByTestId('Logo');
 

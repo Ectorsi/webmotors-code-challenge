@@ -3,13 +3,9 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import Checkbox from '.';
 
-const mockedHandleChange = jest.fn();
-
 describe('Checkbox component', () => {
   it('should be able to render a Checkbox checked', () => {
-    const { getByTestId } = render(
-      <Checkbox onChange={mockedHandleChange} label="" name="" />,
-    );
+    const { getByTestId } = render(<Checkbox label="" name="" />);
 
     const CheckboxElement = getByTestId('Checkbox');
     fireEvent.click(CheckboxElement);
@@ -17,9 +13,7 @@ describe('Checkbox component', () => {
   });
 
   it('should be able to render a Checkbox unchecked', () => {
-    const { getByTestId } = render(
-      <Checkbox onChange={mockedHandleChange} label="" name="" />,
-    );
+    const { getByTestId } = render(<Checkbox label="" name="" />);
 
     const CheckboxElement = getByTestId('Checkbox');
     fireEvent.click(CheckboxElement);

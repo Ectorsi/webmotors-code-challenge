@@ -11,5 +11,5 @@ export default {
 } as Meta;
 
 export const Default: Story = () => {
-  return <CardHeader />;
+  return <CardHeader selectTab={() => console.log('Clicou na Tab')} />;
 };

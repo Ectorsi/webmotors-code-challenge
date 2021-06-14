@@ -13,9 +13,13 @@ export const Container = styled.div<StyleProps>`
   background-color: transparent;
   border-radius: 3px;
   cursor: pointer;
-
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  @media (min-width: 1199px) {
+    margin-bottom: inherit;
+  }
 
   ${({ noBorderLeftRadius }) =>
     noBorderLeftRadius &&
